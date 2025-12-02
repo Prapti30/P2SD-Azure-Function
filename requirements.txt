@@ -3,3 +3,10 @@
 # azure-monitor-opentelemetry 
 
 azure-functions
+requests
+python-dotenv
+azure-eventhub
+requests
+databricks-vectorsearch
+mlflow
+databricks-sdk

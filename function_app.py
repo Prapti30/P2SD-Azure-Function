@@ -12,13 +12,17 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from databricks_llm import DatabricksLLM
+import azure.functions as func
+from azure.functions import FunctionApp
+from dotenv import load_dotenv
+
 
 # ---------------- Load .env ----------------
 load_dotenv()
 # ---------------- Environment Variables ----------------
 DATABRICKS_TOKEN = os.getenv("DATABRICKS_TOKEN")
 DATABRICKS_HOST = os.getenv("DATABRICKS_HOST")
-DATABRICKS_HTTP_PATH = os.getenv("DATABRICKS_HTTP_PATH", "sql/1.0/warehouses/3dd12f4b21432cb2")
+DATABRICKS_HTTP_PATH = os.getenv("DATABRICKS_HTTP_PATH")
 DATABRICKS_QUERY = "SELECT * FROM databricks_dev.default.anamolydetection"  # Replace with your table/query
 
 app = func.FunctionApp()
